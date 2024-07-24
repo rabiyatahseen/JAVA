@@ -7,6 +7,7 @@ public class simplecal {
         System.out.print("Enter second number: ");
         double num2 = scanner.nextDouble();
         System.out.println("Select operation (+, -, *, /): ");
+        // returns the first character in that string
         char operation = scanner.next().charAt(0);
         double result;
         switch (operation) {
@@ -20,15 +21,10 @@ public class simplecal {
                 result = num1 * num2;
                 break;
             case '/':
-                if (num2 != 0) {
                     result = num1 / num2;
-                } else {
-                    System.out.println("Error! Division by zero is not allowed.");
-                    return; // exit the program
-                }
                 break;
             default:
-                System.out.println("Error! Invalid operation.");
+                System.out.println("Invalid operator");
                 return; // exit the program
         }
         System.out.println(num1 + " " + operation + " " + num2 + " = " + result);
