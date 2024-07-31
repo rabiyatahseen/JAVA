@@ -63,8 +63,5 @@ public class student {
         System.out.println("Regd ID: " + student.getRegdId());
         System.out.println("Score: " + student.getScore());
         System.out.println("Full Name: " + student.getFullName());
-
-      
-        System.out.println("Updated Full Name: " + student.getFullName());
     }
 }
