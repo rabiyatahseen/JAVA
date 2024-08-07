@@ -29,3 +29,40 @@ public class Main {
         displayBookInfo(myBook);
     }
 }
+
+
+// Define the Rectangle class
+class Rectangle {
+    double length;
+    double width;
+
+    // Constructor to initialize the attributes
+    public Rectangle(double length, double width) {
+        this.length = length;
+        this.width = width;
+    }
+}
+
+// Main class to demonstrate object state modification
+public class Main {
+    // Method to resize the rectangle
+    public static void resizeRectangle(Rectangle rect, double newLength, double newWidth) {
+        rect.length = newLength;
+        rect.width = newWidth;
+    }
+
+    public static void main(String[] args) {
+        // Create a Rectangle object
+        Rectangle myRectangle = new Rectangle(5.0, 3.0);
+
+        // Print original dimensions
+        System.out.println("Original Dimensions: Length = " + myRectangle.length + ", Width = " + myRectangle.width);
+
+        // Call the method to resize the rectangle
+        resizeRectangle(myRectangle, 10.0, 6.0);
+
+        // Print resized dimensions
+        System.out.println("Resized Dimensions: Length = " + myRectangle.length + ", Width = " + myRectangle.width);
+    }
+}
+
