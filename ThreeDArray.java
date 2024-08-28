@@ -15,3 +15,10 @@ public class ThreeDArray {
     }
 }
 
+OUTPUT:
+0 0 
+0 0 
+
+0 0 
+0 0 
+
