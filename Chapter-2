@@ -1,0 +1,65 @@
+Question-1
+will be the result of the following expression
+float a =7/4 * 9/2
+
+public class Main {
+    public static void main(String[] args) {
+        float a = 7/4f * 9/2f; 
+        System.out.println(a); 
+}
+Output: 7.875
+
+Question-2
+Write a java program to encrypt a grade  by adding 8 to it. Decrypt it to Show the correct grade 
+public class Main {
+    public static void main(String[] args) {
+        char grade = 'B';
+        grade = (char) (grade + 8);
+        System.out.println(grade);
+        //decrypt
+        grade = (char) (grade - 8);
+        System.out.println(grade);
+    }
+}
+Output:
+J
+B
+
+Question-3
+use comparison operator to find out whether a given number is greater than the use entered number or not
+
+import java.util.Scanner;
+public class NumberComparison {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int a = sc.nextInt();
+        System.out.println(a > 8);
+        sc.close();
+    }
+}
+Output:
+3
+false
+
+Question -4
+Write the follwing expression in a java program
+v^2-u^2/2*a*s
+
+public class PhysicsFormula {
+    public static void main(String[] args) {
+        float a = 5f;
+        float S = 6f;
+        float v = 7f;
+        float u = 8f;
+        float x = (v * v) - (u * u);
+        float y = (2 * a * S);
+        float z = x / y;
+        System.out.println("Result using steps: " + z);
+        float result = (v * v - u * u) / (2 * a * S);
+        
+        System.out.println("Result using single line: " + result);
+    }
+}
+Output:
+Result using steps: -0.25
+Result using single line: -0.25
