@@ -1,0 +1,117 @@
+Quick quiz: java prgm to add 3 numbers?
+Method:1
+public class AddThreeNumbers {
+    public static void main(String[] args) {
+        int num1 = 10;
+        int num2 = 20;
+        int num3 = 30;
+        
+        int sum = num1 + num2 + num3;
+        
+        System.out.println("The sum is: " + sum);
+    }
+}
+Output: The sum is:60
+Method:2
+import java.util.Scanner; // Import the Scanner class
+
+public class Addition {
+    public static void main(String[] args) {
+        // Create a Scanner object to read input
+        Scanner sc = new Scanner(System.in);
+        
+        System.out.print("Enter first number: ");
+        int n1 = sc.nextInt();
+        
+        System.out.print("Enter second number: ");
+        int n2 = sc.nextInt();
+        
+        System.out.print("Enter third number: ");
+        int n3 = sc.nextInt();
+        
+        // Logical operation
+        int total = n1 + n2 + n3;
+        
+        // Display the result
+        System.out.println("The total sum is: " + total);
+        
+        input.close(); // Good practice to close the scanner
+    }
+}
+Out put:Enter first number: 10
+Enter second number: 20
+Enter third number: 40
+The total sum is: 70
+
+Practice set
+Question-2
+Write a java program to calculate CGPA using marks of three subjects (out of hundred).
+
+import java.util.Scanner; // Import the Scanner class
+
+public class Cgpacal {
+    public static void main(String[] args) {
+        float subject1 = 45;
+        float subject2 = 95;
+        float subject3 = 48;
+        float cgpa = (subject1 + subject2 +subject3)/30;
+    System.out.println(cgpa);
+    }
+}
+Output: 6.266667
+
+Question -3
+Write a Java Program which ask the user to enter his or her name and greets them with "Hello" <name> "have a good day" text.
+
+import java.util.Scanner; 
+public class Greeting {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("What is your name?");
+        String name = sc.next();
+        System.out.println("Hello " + name + " have a good day!");
+        sc.close(); 
+    }
+}
+Output:
+What is your name?
+Rabiya
+Hello Rabiya have a good day!
+
+Question-4 
+Write a java program to convert kilometres to mile.
+
+import java.util.Scanner;
+public class KmToMiles {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        // 1. Ask the user for the distance in kilometers
+        System.out.print("Enter distance in Kilometers: ");
+        double km = sc.nextDouble();
+        // 2. Perform the conversion math
+        // Factor: 1 km = 0.621371 miles
+        double miles = km * 0.621371;
+        // 3. Display the result
+        System.out.println(km + " Kilometers is equal to " + miles + " Miles.");
+        sc.close();
+    }
+}
+Output:
+Enter distance in Kilometers: 18
+18.0 Kilometers is equal to 11.184678 Miles.
+
+Question-5
+Write a Java Program to delete whether a number entered by the user is integer or not.
+
+import java.util.Scanner;
+public class CheckInteger {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter something: ");
+        System.out.println(sc.hasNextInt());
+    }
+}
+
+Output:
+Enter something: 3
+true
