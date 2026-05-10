@@ -1,0 +1,299 @@
+# 1. Output of the Program
+
+## Question
+
+What will be the output of this program?
+
+```java id="8v3mqp"
+int a = 10;
+
+if(a == 11)
+    System.out.println("I am 11");
+else
+    System.out.println("I am not 11");
+```
+
+## Code
+
+```java id="4n7xpl"
+class Main {
+    public static void main(String[] args) {
+
+        int a = 10;
+
+        if(a == 11)
+            System.out.println("I am 11");
+        else
+            System.out.println("I am not 11");
+    }
+}
+```
+
+## Output
+
+```text id="9m2qwk"
+I am not 11
+```
+
+---
+
+# 2. Student Pass or Fail
+
+## Question
+
+Write a program to find whether a student is pass or fail. It requires:
+
+* total 40%
+* and at least 33% in each subject.
+
+## Code
+
+```java id="7k1vzr"
+import java.util.Scanner;
+
+class Main {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        int sub1 = sc.nextInt();
+        int sub2 = sc.nextInt();
+        int sub3 = sc.nextInt();
+
+        float total = (sub1 + sub2 + sub3) / 3.0f;
+
+        if(total >= 40 && sub1 >= 33 && sub2 >= 33 && sub3 >= 33)
+            System.out.println("Pass");
+        else
+            System.out.println("Fail");
+    }
+}
+```
+
+## Sample Input
+
+```text id="3w8qpl"
+45
+67
+89
+```
+
+## Output
+
+```text id="1p7mxl"
+Pass
+```
+
+---
+
+# 3. Income Tax Calculator
+
+## Question
+
+Calculate income tax paid by an employee.
+
+## Code
+
+```java id="5t2qvn"
+import java.util.Scanner;
+
+class Main {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        float income = sc.nextFloat();
+        float tax = 0;
+
+        if(income <= 250000) {
+            tax = 0;
+        }
+        else if(income <= 500000) {
+            tax = income * 0.05f;
+        }
+        else if(income <= 1000000) {
+            tax = income * 0.20f;
+        }
+        else {
+            tax = income * 0.30f;
+        }
+
+        System.out.println("Tax = " + tax);
+    }
+}
+```
+
+## Sample Input
+
+```text id="2v9mqr"
+600000
+```
+
+## Output
+
+```text id="6x4pzt"
+Tax = 120000.0
+```
+
+---
+
+# 4. Find Day of the Week
+
+## Question
+
+Find the day of the week given the number:
+
+* 1 for Monday
+* 2 for Tuesday
+
+## Code
+
+```java id="0m8qpk"
+import java.util.Scanner;
+
+class Main {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        int day = sc.nextInt();
+
+        switch(day) {
+
+            case 1:
+                System.out.println("Monday");
+                break;
+
+            case 2:
+                System.out.println("Tuesday");
+                break;
+
+            case 3:
+                System.out.println("Wednesday");
+                break;
+
+            case 4:
+                System.out.println("Thursday");
+                break;
+
+            case 5:
+                System.out.println("Friday");
+                break;
+
+            case 6:
+                System.out.println("Saturday");
+                break;
+
+            case 7:
+                System.out.println("Sunday");
+                break;
+
+            default:
+                System.out.println("Invalid day");
+        }
+    }
+}
+```
+
+## Sample Input
+
+```text id="8r1qwv"
+3
+```
+
+## Output
+
+```text id="9t2mxl"
+Wednesday
+```
+
+---
+
+# 5. Leap Year Checker
+
+## Question
+
+Write a program to check whether a year is leap year or not.
+
+## Code
+
+```java id="1k7qzp"
+import java.util.Scanner;
+
+class Main {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        int year = sc.nextInt();
+
+        if(year % 4 == 0)
+            System.out.println("Leap Year");
+        else
+            System.out.println("Not Leap Year");
+    }
+}
+```
+
+## Sample Input
+
+```text id="3m9qxl"
+2024
+```
+
+## Output
+
+```text id="7v2mpk"
+Leap Year
+```
+
+---
+
+# 6. Website Type Finder
+
+## Question
+
+Find the type of website from URL:
+
+* `.com` → commercial website
+* `.org` → organization website
+* `.in` → Indian website
+
+## Code
+
+```java id="4x8qpl"
+import java.util.Scanner;
+
+class Main {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        String website = sc.nextLine();
+
+        if(website.endsWith(".com"))
+            System.out.println("Commercial Website");
+
+        else if(website.endsWith(".org"))
+            System.out.println("Organization Website");
+
+        else if(website.endsWith(".in"))
+            System.out.println("Indian Website");
+
+        else
+            System.out.println("Other Website");
+    }
+}
+```
+
+## Sample Input
+
+```text id="6n1qwr"
+google.com
+```
+
+## Output
+
+```text id="2p7mzk"
+Commercial Website
+```
