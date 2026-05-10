@@ -1,0 +1,64 @@
+1. Convert a String to Lowercase
+import java.util.Scanner;
+class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String name = sc.nextLine();
+        System.out.println(name.toLowerCase());
+    }
+}
+OUTPUT: RABIYA TAHSEEN
+rabiya tahseen
+
+2. Replace Spaces with Underscores
+import java.util.Scanner;
+class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String name = sc.nextLine();
+        System.out.println(name.replace(' ','_'));
+    }
+}
+Output: Rabiya Tahseen
+Rabiya_Tahseen
+
+3. Fill in a Letter Template
+public class Main {
+    public static void main(String[] args) {
+
+        String letter = "Dear <|name|>, Thanks a lot";
+
+        letter = letter.replace("<|name|>", "Rabiya");
+
+        System.out.println(letter);
+    }
+}
+Output:
+Dear Rabiya, Thanks a lot
+
+4. Detect Double and Triple Spaces in a String
+public class Main {
+    public static void main(String[] args) {
+
+        String str = "This  string   contains spaces";
+
+        System.out.println(str.indexOf("  "));
+        System.out.println(str.indexOf("   "));
+    }
+}
+O/P: 4
+12
+
+5. Format a Letter Using Escape Sequence Characters
+public class Main {
+    public static void main(String[] args) {
+
+        String letter = "Dear Rabiya,\n\tThis Java course is nice.\nThanks!";
+
+        System.out.println(letter);
+    }
+}
+O/P:
+Dear Rabiya,
+	This Java course is nice.
+Thanks!
