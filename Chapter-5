@@ -1,0 +1,223 @@
+1.
+class Main {
+    public static void main(String[] args) {
+
+        for(int i = 5; i >= 1; i--) {
+
+            for(int j = 1; j <= i; j++) {
+
+                System.out.print("*");
+            }
+
+            System.out.println();
+        }
+    }
+}
+O/p:
+*****
+****
+***
+**
+*
+
+2.
+import java.util.Scanner;
+
+class Main {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        int n = sc.nextInt();
+
+        int i = 1;
+        int sum = 0;
+
+        while(i <= n) {
+
+            sum = sum + (2 * i);
+
+            i++;
+        }
+
+        System.out.println("Sum = " + sum);
+    }
+}
+o/p:
+Input
+5
+Even Numbers
+2 4 6 8 10
+Output
+Sum = 30
+
+3.
+import java.util.Scanner;
+
+class Main {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        int n = sc.nextInt();
+
+        for(int i = 1; i <= 10; i++) {
+
+            System.out.println(n + " x " + i + " = " + (n * i));
+        }
+    }
+}
+o/p:
+5 x 1 = 5
+5 x 2 = 10
+5 x 3 = 15
+5 x 4 = 20
+5 x 5 = 25
+5 x 6 = 30
+5 x 7 = 35
+5 x 8 = 40
+5 x 9 = 45
+5 x 10 = 50
+
+4.
+import java.util.Scanner;
+
+class Main {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        int n = sc.nextInt();
+
+        for(int i = 10; i >= 1; i--) {
+
+            System.out.println(n + " x " + i + " = " + (n * i));
+        }
+    }
+}
+o/p:
+5 x 10 = 50
+5 x 9 = 45
+5 x 8 = 40
+5 x 7 = 35
+5 x 6 = 30
+5 x 5 = 25
+5 x 4 = 20
+5 x 3 = 15
+5 x 2 = 10
+5 x 1 = 5
+
+5.
+import java.util.Scanner;
+
+class Main {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        int n = sc.nextInt();
+
+        int factorial = 1;
+
+        for(int i = 1; i <= n; i++) {
+
+            factorial = factorial * i;
+        }
+
+        System.out.println("Factorial = " + factorial);
+    }
+}
+o/p:
+5! = 5 × 4 × 3 × 2 × 1
+Factorial = 120
+
+6.Repeat 5 Using while Loop
+class Main {
+    public static void main(String[] args) {
+
+        int i = 1;
+
+        while(i <= 5) {
+
+            System.out.println(5);
+
+            i++;
+        }
+    }
+}
+o/p:
+5
+5
+5
+5
+5
+
+7.Repeat 1 Using for Loop
+class Main {
+    public static void main(String[] args) {
+
+        for(int i = 1; i <= 5; i++) {
+
+            System.out.println(1);
+        }
+    }
+}
+o/p:
+1
+1
+1
+1
+1
+Repeat 1 Using while Loop
+class Main {
+    public static void main(String[] args) {
+
+        int i = 1;
+
+        while(i <= 5) {
+
+            System.out.println(1);
+
+            i++;
+        }
+    }
+}
+o/p:
+1
+1
+1
+1
+1
+
+8.class Main {
+    public static void main(String[] args) {
+
+        int sum = 0;
+
+        for(int i = 1; i <= 10; i++) {
+
+            sum = sum + (8 * i);
+        }
+
+        System.out.println("Sum = " + sum);
+    }
+}
+o/p:
+Sum = 440
+
+9.
+class Main {
+    public static void main(String[] args) {
+
+        for(int i = 1; i <= 5; i++) {
+
+            System.out.println(2);
+        }
+    }
+}
+o/p:
+2
+2
+2
+2
+2
