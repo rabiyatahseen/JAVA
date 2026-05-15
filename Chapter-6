@@ -1,0 +1,233 @@
+1.Write a Java program to print elements of an array in reverse order.
+import java.util.Scanner;
+
+class Main {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        // Size of array
+        int n = sc.nextInt();
+
+        int[] arr = new int[n];
+
+        // Input array elements
+        for(int i = 0; i < n; i++) {
+
+            arr[i] = sc.nextInt();
+        }
+
+        // Print array in reverse order
+        for(int i = n - 1; i >= 0; i--) {
+
+            System.out.print(arr[i] + " ");
+        }
+    }
+}
+O/p:
+4
+10
+20
+30
+40
+40 30 20 10
+
+2.Create an array of five floats and calculate their sum
+class Main {
+    public static void main(String[] args) {
+
+        // Create float array
+        float[] numbers = {1.2f, 2.5f, 3.1f, 4.8f, 5.4f};
+
+        float sum = 0;
+
+        // Calculate sum
+        for(int i = 0; i < numbers.length; i++) {
+
+            sum = sum + numbers[i];
+        }
+
+        // Print sum
+        System.out.println("Sum = " + sum);
+    }
+}
+O/P:sum = 17.0
+
+3.Write a program to find whether a given integer is present in an array or not.
+class Main {
+    public static void main(String[] args) {
+
+        int[] arr = {1, 2, 3, 4, 5};
+
+        int search = 3;
+
+        boolean found = false;
+
+        for(int i = 0; i < arr.length; i++) {
+
+            if(arr[i] == search) {
+
+                found = true;
+            }
+        }
+
+        if(found)
+            System.out.println("Present");
+        else
+            System.out.println("Not Present");
+    }
+}
+o/p:
+Present
+
+4.Calculate the average marks from an array containing marks of all students in physics using for-each loop.
+class Main {
+    public static void main(String[] args) {
+
+        int[] marks = {80, 75, 90, 85, 70};
+
+        int sum = 0;
+
+        // for-each loop
+        for(int m : marks) {
+
+            sum = sum + m;
+        }
+
+        float average = (float)sum / marks.length;
+
+        System.out.println("Average = " + average);
+    }
+}
+Output
+Average = 80.0
+
+5.Create a Java program to add two matrices of size 2x3.
+class Main {
+    public static void main(String[] args) {
+
+        int[][] A = {
+            {1, 2, 3},
+            {4, 5, 6}
+        };
+
+        int[][] B = {
+            {7, 8, 9},
+            {1, 2, 3}
+        };
+
+        int[][] sum = new int[2][3];
+
+        // Add matrices
+        for(int i = 0; i < 2; i++) {
+
+            for(int j = 0; j < 3; j++) {
+
+                sum[i][j] = A[i][j] + B[i][j];
+            }
+        }
+
+        // Print result
+        for(int i = 0; i < 2; i++) {
+
+            for(int j = 0; j < 3; j++) {
+
+                System.out.print(sum[i][j] + " ");
+            }
+
+            System.out.println();
+        }
+    }
+}
+Output
+8 10 12
+5 7 9
+
+6.Write a Java program to reverse an array.
+class Main {
+    public static void main(String[] args) {
+
+        int[] arr = {1, 2, 3, 4, 5};
+
+        // Reverse array
+        for(int i = arr.length - 1; i >= 0; i--) {
+
+            System.out.print(arr[i] + " ");
+        }
+    }
+}
+Output
+5 4 3 2 1
+
+7.Write a Java program to find the maximum element in an array.
+class Main {
+    public static void main(String[] args) {
+
+        int[] arr = {12, 45, 7, 89, 34};
+
+        int max = arr[0];
+
+        // Find maximum element
+        for(int i = 1; i < arr.length; i++) {
+
+            if(arr[i] > max) {
+
+                max = arr[i];
+            }
+        }
+
+        System.out.println("Maximum Element = " + max);
+    }
+}
+Output
+Maximum Element = 89
+
+8.Write a Java program to find the minimum element in the Java array.
+class Main {
+    public static void main(String[] args) {
+
+        int[] arr = {12, 45, 7, 89, 34};
+
+        int min = arr[0];
+
+        // Find minimum element
+        for(int i = 1; i < arr.length; i++) {
+
+            if(arr[i] < min) {
+
+                min = arr[i];
+            }
+        }
+
+        System.out.println("Minimum Element = " + min);
+    }
+}
+Output
+Minimum Element = 7
+
+9.Write a Java program to find whether an array is sorted or not.
+class Main {
+    public static void main(String[] args) {
+
+        int[] arr = {1, 2, 3, 4, 5};
+
+        boolean sorted = true;
+
+        // Check if array is sorted
+        for(int i = 0; i < arr.length - 1; i++) {
+
+            if(arr[i] > arr[i + 1]) {
+
+                sorted = false;
+                break;
+            }
+        }
+
+        if(sorted)
+            System.out.println("Array is sorted");
+        else
+            System.out.println("Array is not sorted");
+    }
+}
+Output
+Array is sorted
