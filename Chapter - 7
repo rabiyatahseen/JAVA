@@ -1,0 +1,289 @@
+1.Calculate Factorial with Recursion
+import java.util.Scanner;
+public class Main {
+  static int factorial(int n) {
+    if (n > 1) {
+      return n * factorial(n - 1);
+    } else {
+      return 1;
+    }
+  }
+
+  public static void main(String[] args) {
+      System.out.println("enter the value of n:");
+      Scanner sc = new Scanner(System.in);
+      int n = sc.nextInt();
+    System.out.println("Factorial of " +n + " is "  + factorial(n));
+  }
+}
+O/p:
+enter the value of n:
+6
+Factorial of 6 is 720
+
+2.Write a Java method to print multiplication table of a number n.
+import java.util.Scanner;
+public class Main {
+    // Method to print multiplication table
+    static void multiplicationTable(int n) {
+        for (int i = 1; i <= 10; i++) {
+            System.out.println(n + " x " + i + " = " + (n * i));
+        }
+    }
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter a number: ");
+        int n = sc.nextInt();
+        System.out.println("Multiplication Table of " + n + ":");
+        multiplicationTable(n);
+        sc.close();
+    }
+}
+O/p:
+Enter a number: 3
+Multiplication Table of 3:
+3 x 1 = 3
+3 x 2 = 6
+3 x 3 = 9
+3 x 4 = 12
+3 x 5 = 15
+3 x 6 = 18
+3 x 7 = 21
+3 x 8 = 24
+3 x 9 = 27
+3 x 10 = 30
+
+3.Write the program using functions to print the following pattern.
+*
+**
+***
+****
+import java.util.Scanner;
+public class Main {
+    static void pattern(int n){
+        for(int i=1;i<=n;i++){
+            for(int j=1;j<=i;j++){
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter a number:");
+        int n = sc.nextInt();
+        pattern(n);
+        sc.close();
+    }
+}
+o/p:
+Enter a number:4
+*
+**
+***
+****
+
+4.Write a recursive function to calculate sum of first n natural numbers.
+import java.util.Scanner;
+
+public class Main {
+
+    // Recursive function to find sum of first n natural numbers
+    static int sum(int n) {
+
+        // Base condition
+        if (n == 1) {
+            return 1;
+        }
+
+        // Recursive call
+        return n + sum(n - 1);
+    }
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter a number: ");
+        int n = sc.nextInt();
+
+        int result = sum(n);
+
+        System.out.println("Sum of first " + n + " natural numbers is: " + result);
+
+        sc.close();
+    }
+}
+o/p:
+Enter a number: 4
+Sum of first 4 natural numbers is: 10
+
+5.Write the program using functions to print the following pattern.
+****
+***
+**
+*
+import java.util.Scanner;
+public class Main {
+    static void pattern(int n){
+        for(int i=n;i>=1;i--){
+            for(int j=1;j<=i;j++){
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter a number:");
+        int n = sc.nextInt();
+        pattern(n);
+        sc.close();
+    }
+}
+o/p:
+Enter a number:4
+****
+***
+**
+*
+
+6.Write a function to print nth term of Fibonacci series using recursion.
+import java.util.Scanner;
+
+public class Main {
+
+    // Recursive function to find nth Fibonacci term
+    static int fibonacci(int n) {
+
+        // Base conditions
+        if (n == 0) {
+            return 0;
+        }
+
+        if (n == 1) {
+            return 1;
+        }
+
+        // Recursive call
+        return fibonacci(n - 1) + fibonacci(n - 2);
+    }
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter the value of n: ");
+        int n = sc.nextInt();
+
+        int result = fibonacci(n);
+
+        System.out.println("The " + n + "th Fibonacci term is: " + result);
+
+        sc.close();
+    }
+}
+Output
+Enter the value of n: 6
+The 6th Fibonacci term is: 8
+
+7.Write a function to find average of set of numbers passing as argument.
+import java.util.Scanner;
+
+public class Main {
+
+    // Function to find average
+    static double average(int a, int b, int c) {
+
+        int sum = a + b + c;
+
+        return sum / 3.0;
+    }
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter first number: ");
+        int a = sc.nextInt();
+
+        System.out.print("Enter second number: ");
+        int b = sc.nextInt();
+
+        System.out.print("Enter third number: ");
+        int c = sc.nextInt();
+
+        double result = average(a, b, c);
+
+        System.out.println("Average = " + result);
+
+        sc.close();
+    }
+}
+Output
+Enter first number: 10
+Enter second number: 20
+Enter third number: 30
+Average = 20.0
+
+8.Write a Java program to repeat 4 using recursion.
+public class Main {
+
+    // Recursive function
+    static void repeatFour(int n) {
+
+        // Base condition
+        if (n == 0) {
+            return;
+        }
+
+        System.out.println(4);
+
+        // Recursive call
+        repeatFour(n - 1);
+    }
+
+    public static void main(String[] args) {
+
+        // Print 4 five times
+        repeatFour(5);
+    }
+}
+Output
+4
+4
+4
+4
+4
+
+9.Write a function to convert Celsius temperature into Fahrenheit.
+import java.util.Scanner;
+
+public class Main {
+
+    // Function to convert Celsius to Fahrenheit
+    static double convertTemperature(double celsius) {
+
+        double fahrenheit = (celsius * 9 / 5) + 32;
+
+        return fahrenheit;
+    }
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter temperature in Celsius: ");
+        double celsius = sc.nextDouble();
+
+        double fahrenheit = convertTemperature(celsius);
+
+        System.out.println("Temperature in Fahrenheit: " + fahrenheit);
+
+        sc.close();
+    }
+}
+o/p:
+Output
+Enter temperature in Celsius: 25
+Temperature in Fahrenheit: 77.0
