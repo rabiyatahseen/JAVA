@@ -1,0 +1,169 @@
+# 1. Employee Class
+
+class Employee {
+
+    int salary;
+    String name;
+
+    int getSalary() {
+        return salary;
+    }
+
+    String getName() {
+        return name;
+    }
+
+    void setName(String n) {
+        name = n;
+    }
+
+    public static void main(String[] args) {
+
+        Employee e = new Employee();
+
+        e.salary = 50000;
+        e.setName("Rabiya");
+
+        System.out.println(e.getSalary());
+        System.out.println(e.getName());
+    }
+}
+```
+# 2. CellPhone Class
+
+class CellPhone {
+
+    void ringing() {
+        System.out.println("Ringing...");
+    }
+
+    void vibrating() {
+        System.out.println("Vibrating...");
+    }
+
+    void calling() {
+        System.out.println("Calling...");
+    }
+
+    public static void main(String[] args) {
+
+        CellPhone c = new CellPhone();
+
+        c.ringing();
+        c.vibrating();
+        c.calling();
+    }
+}
+```
+
+
+# 3. Square Class
+
+class Square {
+
+    int side;
+
+    int area() {
+        return side * side;
+    }
+
+    int perimeter() {
+        return 4 * side;
+    }
+
+    public static void main(String[] args) {
+
+        Square s = new Square();
+
+        s.side = 5;
+
+        System.out.println("Area = " + s.area());
+        System.out.println("Perimeter = " + s.perimeter());
+    }
+}
+```
+
+---
+
+# 4. Rectangle Class
+
+class Rectangle {
+
+    int length;
+    int breadth;
+
+    int area() {
+        return length * breadth;
+    }
+
+    int perimeter() {
+        return 2 * (length + breadth);
+    }
+
+    public static void main(String[] args) {
+
+        Rectangle r = new Rectangle();
+
+        r.length = 10;
+        r.breadth = 5;
+
+        System.out.println("Area = " + r.area());
+        System.out.println("Perimeter = " + r.perimeter());
+    }
+}
+```
+
+# 5. TommyVecetti Class
+
+class TommyVecetti {
+
+    void hitting() {
+        System.out.println("Hitting...");
+    }
+
+    void running() {
+        System.out.println("Running...");
+    }
+
+    void firing() {
+        System.out.println("Firing...");
+    }
+
+    public static void main(String[] args) {
+
+        TommyVecetti t = new TommyVecetti();
+
+        t.hitting();
+        t.running();
+        t.firing();
+    }
+}
+```
+
+---
+
+# 6. Circle Class
+
+class Circle {
+
+    int radius;
+
+    double area() {
+        return 3.14 * radius * radius;
+    }
+
+    double perimeter() {
+        return 2 * 3.14 * radius;
+    }
+
+    public static void main(String[] args) {
+
+        Circle c = new Circle();
+
+        c.radius = 7;
+
+        System.out.println("Area = " + c.area());
+        System.out.println("Perimeter = " + c.perimeter());
+    }
+}
+```
