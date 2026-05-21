@@ -1,0 +1,347 @@
+1.Create a class Animal and derive other class Dog from it.
+class Animal {
+
+    void eat() {
+
+        System.out.println("Animal is eating");
+    }
+}
+
+// Dog class derived from Animal
+class Dog extends Animal {
+
+    void bark() {
+
+        System.out.println("Dog is barking");
+    }
+}
+
+class Main {
+
+    public static void main(String[] args) {
+
+        Dog d = new Dog();
+
+        d.eat();   // inherited method
+        d.bark();  // Dog class method
+    }
+}
+Output
+Animal is eating
+Dog is barking
+
+2.Create a class Circle and use inheritance to create another class Cylinder from it.
+class Circle {
+
+    protected int radius;
+
+    // Constructor for Circle
+    Circle(int r) {
+
+        radius = r;
+    }
+
+    // Area of Circle
+    double area() {
+
+        return 3.14 * radius * radius;
+    }
+}
+
+// Cylinder class inherits Circle
+class Cylinder extends Circle {
+
+    private int height;
+
+    // Constructor for Cylinder
+    Cylinder(int r, int h) {
+
+        super(r);   // calls Circle constructor
+        height = h;
+    }
+
+    // Volume of Cylinder
+    double volume() {
+
+        return 3.14 * radius * radius * height;
+    }
+}
+
+class Main {
+
+    public static void main(String[] args) {
+
+        Cylinder c = new Cylinder(7, 14);
+
+        System.out.println("Circle Area = " + c.area());
+
+        System.out.println("Cylinder Volume = " + c.volume());
+    }
+}
+Output
+Circle Area = 153.86
+Cylinder Volume = 2154.04
+
+3.Create a class Rectangle and use inheritance to create another class Cubeoid. Try to keep it as close to real-world scenario as possible.
+class Rectangle {
+
+    protected int length;
+    protected int breadth;
+
+    // Constructor for Rectangle
+    Rectangle(int l, int b) {
+
+        length = l;
+        breadth = b;
+    }
+
+    // Area of Rectangle
+    int area() {
+
+        return length * breadth;
+    }
+}
+
+// Cuboid class inherits Rectangle
+class Cuboid extends Rectangle {
+
+    private int height;
+
+    // Constructor for Cuboid
+    Cuboid(int l, int b, int h) {
+
+        super(l, b);
+
+        height = h;
+    }
+
+    // Volume of Cuboid
+    int volume() {
+
+        return length * breadth * height;
+    }
+}
+
+class Main {
+
+    public static void main(String[] args) {
+
+        Cuboid c = new Cuboid(10, 5, 4);
+
+        System.out.println("Rectangle Area = " + c.area());
+
+        System.out.println("Cuboid Volume = " + c.volume());
+    }
+}
+Output
+Rectangle Area = 50
+Cuboid Volume = 200
+
+4.Create methods for area and volume in 1. In the 1st  question states create a class Circle and use inheritance to create another class Cylinder from it.
+class Circle {
+
+    protected int radius;
+
+    // Constructor
+    Circle(int r) {
+
+        radius = r;
+    }
+
+    // Area of Circle
+    double area() {
+
+        return 3.14 * radius * radius;
+    }
+}
+
+// Cylinder inherits Circle
+class Cylinder extends Circle {
+
+    private int height;
+
+    // Constructor
+    Cylinder(int r, int h) {
+
+        super(r);
+
+        height = h;
+    }
+
+    // Volume of Cylinder
+    double volume() {
+
+        return 3.14 * radius * radius * height;
+    }
+}
+
+class Main {
+
+    public static void main(String[] args) {
+
+        Cylinder c = new Cylinder(7, 14);
+
+        System.out.println("Area of Circle = " + c.area());
+
+        System.out.println("Volume of Cylinder = " + c.volume());
+    }
+}
+Output
+Area of Circle = 153.86
+Volume of Cylinder = 2154.04
+
+5.Create methods for area and volume in 2. Also create getters and setters.
+class Rectangle {
+
+    protected int length;
+    protected int breadth;
+
+    // Constructor
+    Rectangle(int l, int b) {
+
+        length = l;
+        breadth = b;
+    }
+
+    // Getters
+    int getLength() {
+
+        return length;
+    }
+
+    int getBreadth() {
+
+        return breadth;
+    }
+
+    // Setters
+    void setLength(int l) {
+
+        length = l;
+    }
+
+    void setBreadth(int b) {
+
+        breadth = b;
+    }
+
+    // Area of Rectangle
+    int area() {
+
+        return length * breadth;
+    }
+}
+
+// Cuboid inherits Rectangle
+class Cuboid extends Rectangle {
+
+    private int height;
+
+    // Constructor
+    Cuboid(int l, int b, int h) {
+
+        super(l, b);
+
+        height = h;
+    }
+
+    // Getter
+    int getHeight() {
+
+        return height;
+    }
+
+    // Setter
+    void setHeight(int h) {
+
+        height = h;
+    }
+
+    // Volume of Cuboid
+    int volume() {
+
+        return length * breadth * height;
+    }
+}
+
+class Main {
+
+    public static void main(String[] args) {
+
+        Cuboid c = new Cuboid(10, 5, 4);
+
+        // Using getters
+        System.out.println("Length = " + c.getLength());
+        System.out.println("Breadth = " + c.getBreadth());
+        System.out.println("Height = " + c.getHeight());
+
+        // Methods
+        System.out.println("Area of Rectangle = " + c.area());
+        System.out.println("Volume of Cuboid = " + c.volume());
+
+        // Using setters
+        c.setLength(12);
+        c.setBreadth(6);
+        c.setHeight(5);
+
+        System.out.println();
+
+        System.out.println("Updated Length = " + c.getLength());
+        System.out.println("Updated Breadth = " + c.getBreadth());
+        System.out.println("Updated Height = " + c.getHeight());
+
+        System.out.println("Updated Area = " + c.area());
+        System.out.println("Updated Volume = " + c.volume());
+    }
+}
+Output
+Length = 10
+Breadth = 5
+Height = 4
+Area of Rectangle = 50
+Volume of Cuboid = 200
+
+Updated Length = 12
+Updated Breadth = 6
+Updated Height = 5
+Updated Area = 72
+Updated Volume = 360
+
+6.What is the order of constructor execution for the following inheritance hierarchy: Base1 - Derived1 - Derived2.
+Derived2 obj = new Derived2();
+ of which constructor(5) will be executed and in what order?
+class Base1 {
+
+    Base1() {
+
+        System.out.println("Base1 Constructor");
+    }
+}
+
+class Derived1 extends Base1 {
+
+    Derived1() {
+
+        System.out.println("Derived1 Constructor");
+    }
+}
+
+class Derived2 extends Derived1 {
+
+    Derived2() {
+
+        System.out.println("Derived2 Constructor");
+    }
+}
+
+class Main {
+
+    public static void main(String[] args) {
+
+        Derived2 obj = new Derived2();
+    }
+}
+Output
+Base1 Constructor
+Derived1 Constructor
+Derived2 Constructor
