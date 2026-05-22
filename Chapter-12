@@ -1,0 +1,228 @@
+# 1. Create three classes Calculator, SCCalculator and HybridCalculator and group them into a package.
+
+## Code
+
+### Calculator.java
+
+```java id="8v2mql"
+package mypackage;
+
+public class Calculator {
+
+    public int add(int a, int b) {
+
+        return a + b;
+    }
+}
+```
+
+---
+
+### SCCalculator.java
+
+```java id="4v8qwr"
+package mypackage;
+
+public class SCCalculator {
+
+    public double square(int n) {
+
+        return n * n;
+    }
+}
+```
+
+---
+
+### HybridCalculator.java
+
+```java id="9m1qvl"
+package mypackage;
+
+public class HybridCalculator extends Calculator {
+
+    public int multiply(int a, int b) {
+
+        return a * b;
+    }
+}
+```
+
+---
+
+### Main.java
+
+```java id="2p7mzk"
+import mypackage.*;
+
+class Main {
+
+    public static void main(String[] args) {
+
+        Calculator c = new Calculator();
+
+        System.out.println("Addition = " + c.add(10, 5));
+
+        SCCalculator s = new SCCalculator();
+
+        System.out.println("Square = " + s.square(4));
+
+        HybridCalculator h = new HybridCalculator();
+
+        System.out.println("Multiplication = " + h.multiply(3, 4));
+    }
+}
+```
+
+---
+
+## Output
+
+```text id="6n2qpk"
+Addition = 15
+Square = 16.0
+Multiplication = 12
+```
+
+---
+
+# 2. Use a built-in package in Java to write a class which displays a message after taking input from the user.
+
+## Code
+
+```java id="1v8mxl"
+import java.util.Scanner;
+
+class Main {
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter your name: ");
+
+        String name = sc.nextLine();
+
+        System.out.println("Hello " + name);
+    }
+}
+```
+
+---
+
+## Output
+
+```text id="3k9qwr"
+Enter your name: Rabiya
+Hello Rabiya
+```
+
+---
+
+# 3. Create a package in Java with three package levels folder, folder1, folder2.
+
+## Code
+
+### Demo.java
+
+```java id="8p1qvl"
+package folder.folder1.folder2;
+
+public class Demo {
+
+    public void show() {
+
+        System.out.println("Package with 3 levels");
+    }
+}
+```
+
+---
+
+### Main.java
+
+```java id="5m7qwr"
+import folder.folder1.folder2.Demo;
+
+class Main {
+
+    public static void main(String[] args) {
+
+        Demo d = new Demo();
+
+        d.show();
+    }
+}
+```
+
+---
+
+## Output
+
+```text id="0v2mzk"
+Package with 3 levels
+```
+
+---
+
+## Folder Structure
+
+```text id="2p9mql"
+folder
+   └── folder1
+          └── folder2
+                 └── Demo.java
+```
+
+---
+
+# 4. Prove that you cannot access default property but can access protected property from subclass.
+
+## Code
+
+```java id="7v1qpk"
+class Parent {
+
+    int a = 10; // default
+
+    protected int b = 20;
+}
+
+class Child extends Parent {
+
+    void display() {
+
+        // System.out.println(a); // not accessible in another package
+
+        System.out.println(b);
+    }
+}
+
+class Main {
+
+    public static void main(String[] args) {
+
+        Child c = new Child();
+
+        c.display();
+    }
+}
+```
+
+---
+
+## Output
+
+```text id="4x2mzk"
+20
+```
+
+---
+
+# Explanation
+
+```text id="8m1qwr"
+default → accessible only within same package
+
+protected → accessible in subclass using inheritance
+```
