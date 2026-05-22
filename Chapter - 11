@@ -1,182 +1,126 @@
-# 1. Create an abstract class Pen with methods write() and refill() as abstract methods.
+1. Create three classes Calculator, SCCalculator and HybridCalculator and group them into a package.
+Code
+Calculator.java
+package mypackage;
 
-## Code
+public class Calculator {
 
-```java id="8v2mql"
-abstract class Pen {
+    public int add(int a, int b) {
 
-    abstract void write();
-
-    abstract void refill();
+        return a + b;
+    }
 }
+SCCalculator.java
+package mypackage;
+
+public class SCCalculator {
+
+    public double square(int n) {
+
+        return n * n;
+    }
+}
+HybridCalculator.java
+package mypackage;
+
+public class HybridCalculator extends Calculator {
+
+    public int multiply(int a, int b) {
+
+        return a * b;
+    }
+}
+Main.java
+import mypackage.*;
 
 class Main {
 
     public static void main(String[] args) {
 
-        System.out.println("Abstract Class Pen");
+        Calculator c = new Calculator();
+
+        System.out.println("Addition = " + c.add(10, 5));
+
+        SCCalculator s = new SCCalculator();
+
+        System.out.println("Square = " + s.square(4));
+
+        HybridCalculator h = new HybridCalculator();
+
+        System.out.println("Multiplication = " + h.multiply(3, 4));
     }
 }
-```
-
-## Output
-
-```text id="4v8qwr"
-Abstract Class Pen
-```
-
----
-
-# 2. Use the Pen class to create a concrete class FountainPen with additional method changeNib().
-
-## Code
-
-```java id="9m1qvl"
-abstract class Pen {
-
-    abstract void write();
-
-    abstract void refill();
-}
-
-class FountainPen extends Pen {
-
-    void write() {
-
-        System.out.println("Writing...");
-    }
-
-    void refill() {
-
-        System.out.println("Refilling...");
-    }
-
-    void changeNib() {
-
-        System.out.println("Changing Nib...");
-    }
-}
+Output
+Addition = 15
+Square = 16.0
+Multiplication = 12
+2. Use a built-in package in Java to write a class which displays a message after taking input from the user.
+Code
+import java.util.Scanner;
 
 class Main {
 
     public static void main(String[] args) {
 
-        FountainPen f = new FountainPen();
+        Scanner sc = new Scanner(System.in);
 
-        f.write();
-        f.refill();
-        f.changeNib();
+        System.out.print("Enter your name: ");
+
+        String name = sc.nextLine();
+
+        System.out.println("Hello " + name);
     }
 }
-```
+Output
+Enter your name: Rabiya
+Hello Rabiya
+3. Create a package in Java with three package levels folder, folder1, folder2.
+Code
+Demo.java
+package folder.folder1.folder2;
 
-## Output
+public class Demo {
 
-```text id="2p7mzk"
-Writing...
-Refilling...
-Changing Nib...
-```
+    public void show() {
 
----
-
-# 3. Create a class Monkey with jump() and bite() methods. Create a class Human which inherits Monkey and implements BasicAnimal interface with eat() and sleep() methods.
-
-## Code
-
-```java id="6n2qpk"
-class Monkey {
-
-    void jump() {
-
-        System.out.println("Jumping...");
-    }
-
-    void bite() {
-
-        System.out.println("Biting...");
+        System.out.println("Package with 3 levels");
     }
 }
-
-interface BasicAnimal {
-
-    void eat();
-
-    void sleep();
-}
-
-class Human extends Monkey implements BasicAnimal {
-
-    public void eat() {
-
-        System.out.println("Eating...");
-    }
-
-    public void sleep() {
-
-        System.out.println("Sleeping...");
-    }
-}
+Main.java
+import folder.folder1.folder2.Demo;
 
 class Main {
 
     public static void main(String[] args) {
 
-        Human h = new Human();
+        Demo d = new Demo();
 
-        h.jump();
-        h.bite();
-        h.eat();
-        h.sleep();
+        d.show();
     }
 }
-```
+Output
+Package with 3 levels
+Folder Structure
+folder
+   └── folder1
+          └── folder2
+                 └── Demo.java
+4. Prove that you cannot access default property but can access protected property from subclass.
+Code
+class Parent {
 
-## Output
+    int a = 10; // default
 
-```text id="1v8mxl"
-Jumping...
-Biting...
-Eating...
-Sleeping...
-```
-
----
-
-# 4. Create an abstract class Telephone with ring(), lift(), and disconnect() methods. Create another class SmartTelephone and demonstrate polymorphism.
-
-## Code
-
-```java id="3k9qwr"
-abstract class Telephone {
-
-    abstract void ring();
-
-    abstract void lift();
-
-    abstract void disconnect();
+    protected int b = 20;
 }
 
-class SmartTelephone extends Telephone {
+class Child extends Parent {
 
-    void ring() {
+    void display() {
 
-        System.out.println("Ringing...");
-    }
+        // System.out.println(a); // not accessible in another package
 
-    void lift() {
-
-        System.out.println("Call Lifted...");
-    }
-
-    void disconnect() {
-
-        System.out.println("Call Disconnected...");
-    }
-
-    void camera() {
-
-        System.out.println("Opening Camera...");
+        System.out.println(b);
     }
 }
 
@@ -184,139 +128,14 @@ class Main {
 
     public static void main(String[] args) {
 
-        Telephone t = new SmartTelephone();
+        Child c = new Child();
 
-        t.ring();
-        t.lift();
-        t.disconnect();
+        c.display();
     }
 }
-```
+Output
+20
+Explanation
+default → accessible only within same package
 
-## Output
-
-```text id="8p1qvl"
-Ringing...
-Call Lifted...
-Call Disconnected...
-```
-
----
-
-# 5. Demonstrate polymorphism using Monkey class.
-
-## Code
-
-```java id="5m7qwr"
-class Monkey {
-
-    void jump() {
-
-        System.out.println("Jumping...");
-    }
-}
-
-class Human extends Monkey {
-
-    void speak() {
-
-        System.out.println("Speaking...");
-    }
-}
-
-class Main {
-
-    public static void main(String[] args) {
-
-        Monkey m = new Human();
-
-        m.jump();
-    }
-}
-```
-
-## Output
-
-```text id="0v2mzk"
-Jumping...
-```
-
----
-
-# 6. Create an interface TVRemote and inherit another interface SmartTVRemote.
-
-## Code
-
-```java id="2p9mql"
-interface TVRemote {
-
-    void powerOn();
-
-    void volumeUp();
-}
-
-interface SmartTVRemote extends TVRemote {
-
-    void openYouTube();
-}
-
-class Main {
-
-    public static void main(String[] args) {
-
-        System.out.println("Interfaces Created");
-    }
-}
-```
-
-## Output
-
-```text id="7v1qpk"
-Interfaces Created
-```
-
----
-
-# 7. Create a class TV which implements TVRemote interface.
-
-## Code
-
-```java id="4x2mzk"
-interface TVRemote {
-
-    void powerOn();
-
-    void volumeUp();
-}
-
-class TV implements TVRemote {
-
-    public void powerOn() {
-
-        System.out.println("TV Power ON");
-    }
-
-    public void volumeUp() {
-
-        System.out.println("Volume Increased");
-    }
-}
-
-class Main {
-
-    public static void main(String[] args) {
-
-        TV t = new TV();
-
-        t.powerOn();
-        t.volumeUp();
-    }
-}
-```
-
-## Output
-
-```text id="8m1qwr"
-TV Power ON
-Volume Increased
-```
+protected → accessible in subclass using inheritance
