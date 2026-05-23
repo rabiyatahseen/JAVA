@@ -1,0 +1,236 @@
+1. Write a Java program to demonstrate syntax, logical and runtime errors.
+Code
+class Main {
+
+    public static void main(String[] args) {
+
+        // Syntax Error
+        // int a = 10
+        // Missing semicolon
+
+        // Logical Error
+        int sum = 2 * 3; // should be + for addition
+
+        System.out.println("Logical Error Result = " + sum);
+
+        // Runtime Error
+        int x = 10 / 0;
+
+        System.out.println(x);
+    }
+}
+Output
+Logical Error Result = 6
+Exception in thread "main"
+java.lang.ArithmeticException: / by zero
+2. Write a Java program that prints "HaHa" during Arithmetic exception and "HeHe" during IllegalArgumentException.
+Code
+class Main {
+
+    public static void main(String[] args) {
+
+        try {
+
+            int a = 10 / 0;
+        }
+
+        catch(ArithmeticException e) {
+
+            System.out.println("HaHa");
+        }
+
+        try {
+
+            throw new IllegalArgumentException();
+        }
+
+        catch(IllegalArgumentException e) {
+
+            System.out.println("HeHe");
+        }
+    }
+}
+Output
+HaHa
+HeHe
+3. Write a Java program that allows you to keep accessing an array until a valid index is given. If maximum retries exceed 5 print "Error".
+Code
+import java.util.Scanner;
+
+class Main {
+
+    public static void main(String[] args) {
+
+        int[] arr = {10, 20, 30, 40, 50};
+
+        Scanner sc = new Scanner(System.in);
+
+        int retries = 0;
+
+        while(retries < 5) {
+
+            try {
+
+                System.out.print("Enter Index: ");
+
+                int index = sc.nextInt();
+
+                System.out.println(arr[index]);
+
+                break;
+            }
+
+            catch(Exception e) {
+
+                System.out.println("Invalid Index");
+
+                retries++;
+            }
+        }
+
+        if(retries >= 5) {
+
+            System.out.println("Error");
+        }
+    }
+}
+Output
+Enter Index: 7
+Invalid Index
+Enter Index: 2
+30
+4. Modify program in Q3 to throw a custom Exception if max retries are reached.
+Code
+import java.util.Scanner;
+
+class MaxRetriesException extends Exception {
+
+    public String toString() {
+
+        return "Maximum retries reached";
+    }
+}
+
+class Main {
+
+    public static void main(String[] args) {
+
+        int[] arr = {10, 20, 30, 40, 50};
+
+        Scanner sc = new Scanner(System.in);
+
+        int retries = 0;
+
+        while(retries < 5) {
+
+            try {
+
+                System.out.print("Enter Index: ");
+
+                int index = sc.nextInt();
+
+                System.out.println(arr[index]);
+
+                break;
+            }
+
+            catch(Exception e) {
+
+                System.out.println("Invalid Index");
+
+                retries++;
+            }
+        }
+
+        try {
+
+            if(retries >= 5) {
+
+                throw new MaxRetriesException();
+            }
+        }
+
+        catch(MaxRetriesException e) {
+
+            System.out.println(e);
+        }
+    }
+}
+Output
+Invalid Index
+Invalid Index
+Invalid Index
+Invalid Index
+Invalid Index
+Maximum retries reached
+5. Wrap the program in Q3 inside a method which throws your custom Exception.
+Code
+import java.util.Scanner;
+
+class MaxRetriesException extends Exception {
+
+    public String toString() {
+
+        return "Maximum retries reached";
+    }
+}
+
+class Test {
+
+    void accessArray() throws MaxRetriesException {
+
+        int[] arr = {10, 20, 30, 40, 50};
+
+        Scanner sc = new Scanner(System.in);
+
+        int retries = 0;
+
+        while(retries < 5) {
+
+            try {
+
+                System.out.print("Enter Index: ");
+
+                int index = sc.nextInt();
+
+                System.out.println(arr[index]);
+
+                return;
+            }
+
+            catch(Exception e) {
+
+                System.out.println("Invalid Index");
+
+                retries++;
+            }
+        }
+
+        throw new MaxRetriesException();
+    }
+}
+
+class Main {
+
+    public static void main(String[] args) {
+
+        Test t = new Test();
+
+        try {
+
+            t.accessArray();
+        }
+
+        catch(MaxRetriesException e) {
+
+            System.out.println(e);
+        }
+    }
+}
+Output
+Invalid Index
+Invalid Index
+Invalid Index
+Invalid Index
+Invalid Index
+Maximum retries reached
